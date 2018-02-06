@@ -9,12 +9,14 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Animal = /** @class */ (function () {
+    // name: string;
     function Animal(theName) {
-        this.name = theName;
+        this.theName = theName;
+        // this.name = theName;
     }
     Animal.prototype.move = function (distanceInMeters) {
         if (distanceInMeters === void 0) { distanceInMeters = 0; }
-        console.log(this.name + " moved " + distanceInMeters + "m.");
+        console.log(this.theName + " moved " + distanceInMeters + "m.");
     };
     return Animal;
 }());
