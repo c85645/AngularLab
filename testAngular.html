@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>HelloWorld AngularJS Application</head>
+<body>
+    <h1>HelloWorld AngularJS Application</h1>
+
+    <!-- <div ng-app=""
+        ng-init="persons = [{fname:'Micheal1', lname:'Jordan1'}, 
+                            {fname:'Micheal2', lname:'Jordan2'}, 
+                            {fname:'Micheal3', lname:'Jordan3'}]">
+        <p>Please Enter your Name: <input type="text" ng-model="name"></p>
+        <p>Hello, <span ng-bind="name"></span>!</p>
+        <ol>
+            <li ng-repeat="person in persons">
+                {{ 'First Name :' + person.fname + ', Last Name :' + person.lname }}
+            </li>
+        </ol>
+    </div> -->
+
+    <div ng-app=""
+        ng-init="quantity = 3;price = 50;
+                student = {firstname:'Lebron', lastname:'James', rollno:456};
+                grades = [80, 90, 75, 73, 60]">
+        <p>Hello {{ student.firstname + " " + student.lastname}}</p>
+        <p>Expense on Books : {{ price * quantity }} Rs</p>
+        <p>Roll No: {{ student.rollno }}</p>
+        <p>Grades(Math): {{ grades[2] }}</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</body>
+</html>
