@@ -9,6 +9,9 @@ export class AppComponent {
   title = 'My First Angular App';
   months = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
   isavailable = false;
+  todaydate = new Date();
+  jsonval = {name:'Rox', age:'25', address:{a1:'Mumbai', a2:'Karnataka'}};
+
   clickFunction(event) {
     if (this.isavailable) {
       this.isavailable = false;
