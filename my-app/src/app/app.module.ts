@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CmpComponent } from './cmp/cmp.component';
 import { ChangeTextDirective } from './change-text.directive';
+import { SqrtPipe } from './sqrt.pipe';
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { ChangeTextDirective } from './change-text.directive';
     AppComponent,
     CmpComponent,
     ChangeTextDirective,
+    SqrtPipe,
   ],
   imports: [
     BrowserModule
