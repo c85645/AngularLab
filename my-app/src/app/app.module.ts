@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { CmpComponent } from './cmp/cmp.component';
 import { ChangeTextDirective } from './change-text.directive';
 import { SqrtPipe } from './sqrt.pipe';
+import { RouterModule } from '@angular/router';
+import { MyserviceService } from './myservice.service';
 
 
 @NgModule({
@@ -14,9 +16,20 @@ import { SqrtPipe } from './sqrt.pipe';
     SqrtPipe,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'cmp',
+        component:CmpComponent 
+      }
+    ])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MyserviceService,
+      useClass: MyserviceService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
