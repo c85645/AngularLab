@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+</head>
+<body>
+    <table ng-controller="controller">
+        <tbody>
+            <tr>
+                <td>uppercase filter</td>
+                <td>{{ fullName | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>lowercase filter</td>
+                <td>{{ fullName | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>currency filter</td>
+                <td>{{ fees | currency:"NTD$":3}}</td>
+            </tr>
+            <tr>
+                <td>filter filter</td>
+                <td>
+                    <ul>
+                        <li ng-repeat="x in cars | filter : 'A'">{{ x }}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>orderby filter</td>
+                <td>
+                    <ul>
+                        <li ng-repeat="y in names | orderBy: 'name'">{{ "Name:" + y.name + ",Country:" + y.country }}</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        var app = angular.module('myApp', []);
+        app.controller('controller', function($scope){
+            $scope.cars = ['Aston Martin', 'Audi', 'Bentley', 'BMW', 'Bugatti'];
+            $scope.fullName = 'Jeff Chang';
+            $scope.fees = 4321.123;
+            $scope.names = [
+                {name:'Jani',country:'Norway'},
+                {name:'Carl',country:'Sweden'},
+                {name:'Margareth',country:'England'},
+                {name:'Hege',country:'Norway'},
+                {name:'Joe',country:'Denmark'},
+                {name:'Gustav',country:'Sweden'},
+                {name:'Birgit',country:'Denmark'},
+                {name:'Mary',country:'England'},
+                {name:'Kai',country:'Norway'}
+            ];
+        });
+    </script>
+</body>
+</html>
