@@ -20,7 +20,7 @@ import { MyserviceService } from './myservice.service';
     RouterModule.forRoot([
       {
         path: 'cmp',
-        component:CmpComponent 
+        component: CmpComponent,
       }
     ])
   ],
