@@ -9,7 +9,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Animal = /** @class */ (function () {
-    function Animal() {
+    function Animal(name) {
+        this.name = name;
     }
     Animal.prototype.move = function (distanceInMeters) {
         if (distanceInMeters === void 0) { distanceInMeters = 0; }
@@ -43,11 +44,26 @@ var Cat = /** @class */ (function (_super) {
     };
     return Cat;
 }(Animal));
+var Snake = /** @class */ (function (_super) {
+    __extends(Snake, _super);
+    function Snake(name) {
+        return _super.call(this, name) || this;
+    }
+    Snake.prototype.move = function (distanceInMeters) {
+        if (distanceInMeters === void 0) { distanceInMeters = 5; }
+        console.log('Slithering...');
+        _super.prototype.move.call(this, distanceInMeters);
+    };
+    return Snake;
+}(Animal));
 // const dog = new Dog();
 // dog.bark();
 // dog.move(10);
 // dog.bark();
-var snoopy = new Dog();
-snoopy.speak();
-var kitty = new Cat();
-kitty.speak();
+// 多型
+var snoopy = new Dog('dog');
+snoopy.speak(); // Dynamic Binding
+var kitty = new Cat('cat');
+kitty.speak(); // VMI(Virtual Method Invocation)
+var sam = new Snake("Sammy the Python");
+sam.move();
